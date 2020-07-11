@@ -1,5 +1,9 @@
-footer {
-    text-align: center;
-    padding: 3px;
-    background-color: #e3f2fd;
-  }
+.left-section{
+  position: sticky;
+  top: 6rem;
+ 
+}
+.right-section{
+  position: sticky;
+  top: 6rem;
+}
