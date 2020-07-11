@@ -6,120 +6,247 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/dc47a1c277.js" crossorigin="anonymous"></script>
     <title>MAD</title>
+
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background: #e3f2fd;">
-        <a class="navbar-brand" href="index.html">MAD</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Sign up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="task-form.html">Add task</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profile</a>
-                </li>
-            </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">MAD</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i> <span class="badge badge-primary">3</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">There is a new Event</a>
+                                <a class="dropdown-item" href="#">Hamdy added a new task</a>
+                                <a class="dropdown-item" href="#">There is a new Event</a>
+                                <a class="dropdown-item" href="#">There is a new Event</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Sign up</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="task-form.html">Add task</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    
-    <div class="row m-0 mt-5">
-        <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <!-- Left Section -->
+            <div class="col-md-3">
+                <div class="card shadow">
                     <h5 class="card-title mx-auto mt-3">Hamdy Youssef</h5>
-                    <img class="card-img-top mx-auto rounded-circle" style="width: 10rem; height: 10rem;"
-                        src="hamdy.jpg" alt="Card image cap">
+                    <img class="card-img-top mx-auto rounded-circle" style="width: 7rem; height: 7rem;"
+                        src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/2/2c/New_Timmy_Stock.png/revision/latest/scale-to-width-down/340?cb=20200127001833&path-prefix=en"
+                        alt="Card image cap">
                     <hr class="mx-auto" style="width:80%;">
                     <div class="card-body">
-                        <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> هيد المتابعة</p>
-                        <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> مدينة نصر</p>
-                        <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> Dec 1, 1998</p>
+                        <p><i class="far fa-address-card mr-2"></i>Head of follow-up committee</p>
+                        <p><i class="fas fa-home mr-2"></i>Nasr City</p>
+                        <p><i class="fas fa-birthday-cake mr-2"></i> Dec 1, 1998</p>
                     </div>
                 </div>
-                <div class="card mt-3" style="width: 18rem;">
+                <div class="card my-3 shadow">
                     <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary active"><i class="fa fa-circle-o-notch fa-fw mr-3"></i>Tasks</a>
-                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa fa-calendar-check-o fa-fw mr-3"></i>Events</a>
-                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa fa-circle-o-notch fa-fw mr-3"></i>Given Tasks</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary active">
+                            <i class="fas fa-tasks mr-3 fa-lg"></i></i>Tasks</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+                            <i class="fas fa-tasks mr-3 fa-lg"></i></i>Given Tasks</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+                            <i class="far fa-calendar-check fa-lg mr-3"></i>Events
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+                            <i class="far fa-calendar-check fa-lg mr-3"></i>Plan
+                        </a>
+                        <a href="statistics.html" class="list-group-item list-group-item-action list-group-item-secondary">
+                            <i class="fas fa-chart-bar fa-lg mr-3"></i>Statistics
+                        </a>
                     </div>
                 </div>
-        </div>
-        <div class="col-md-7">
-    <div class="container ">
-        <h1 class="text-center mb-5">بسم الله الرحمن الرحيم</h1>
-        <h1 class="text-center mb-5">Last Month Rankings</h1>
-        <div class="row mb-2">
-            <div class="col-3 ">
-                <h4 class="float-left">1_Nasr City</h4>
             </div>
-            <div class="col-9 progress p-0" style="height: 3rem;">
-                <div class="progress-bar bg-secondary " role="progressbar" style="width: 88%;" aria-valuenow="50"
-                    aria-valuemin="0" aria-valuemax="100"></div>
+            <!-- End of the left section-->
+
+            <!-- Middle Section-->
+            <div class="col-md-7">
+                <div class="card mb-3 shadow">
+                    <div class="container">
+                        <form>
+                            <div class="form-group mt-2">
+                                <label for="textarea">Want to anonuce something?</label>
+                                <textarea class="form-control" id="textarea"
+                                    placeholder="Welcome to the Website"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Upload Photo</label>
+                                <input type="file" class="form-control-file" style="width:14rem;"
+                                    id="exampleFormControlFile1">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-25">Post</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mb-3 shadow">
+                    <div class="container">
+                        <div class="row mt-4">
+                            <div class="col-8 col-lg-10 d-inline-flex">
+                                <img class="rounded-circle" style="width: 4rem; height: 4rem;"
+                                    src="https://i.pinimg.com/originals/ce/5f/53/ce5f53437e291c48705428721406985c.jpg">
+                                <span class="ml-2">
+                                    <h3 class="mb-0">Nada AbdElRahman </h3>
+                                    <small class="float-right">Technical director of the follow-up committee,
+                                        October</small>
+                                </span>
+                            </div>
+                            <div class="col-4 col-lg-2">
+                                <p class="mt-3 ml-4">23 min</p>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    تم ب حمدالله عمل تدريب نشيط المستوى الاول للدفعه الاولى ⁦❤️⁩🙈
+                                    بحضور ٨٥ متطوع نشيط
+                                    اليوم كان راائع جداا و من انجح الايام اللى عملناها ك لجنه متابعه و المتطوعين خارجين
+                                    مبسوطين و متحمسين للتدريب اللى جاى
+                                    شكرااا جدااا هيدات المتابعه الجبارين جدااا ربنا يكرمكم يا رب و اليوم عمره ما كان
+                                    هينجح
+                                    لولاكم و زى ما جوده و كامب امبارح قال انكم عنوان قائمه كبيره من الإنجازات و لعل ال
+                                    ٨٥
+                                    متطوع دول يكونو الصدقه الجاريه لينا يا رب ان شاء الله ⁦❤️⁩
+                                    #اداره_تطوع_نشاط_الفرز 🙈⁦❤️⁩
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <img class="img-fluid"
+                                    src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87146945_2833505540063765_5556233997803061248_n.jpg?_nc_cat=108&_nc_sid=b9115d&_nc_ohc=guM85YAcCRAAX-Nc7bQ&_nc_ht=scontent.fcai20-2.fna&oh=2bb8e19fba2357b8d647938ad9d4cfbc&oe=5F2D90F8">
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-6">
+                                <img class="img-fluid"
+                                    src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87155294_2833505583397094_6100260746224992256_n.jpg?_nc_cat=100&_nc_sid=b9115d&_nc_ohc=CpYxMXvnSrwAX-X7gIl&_nc_ht=scontent.fcai20-2.fna&oh=c30faac2760061a33ac2b17f98bddcb7&oe=5F2FDB0A">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid"
+                                    src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87175399_2833505646730421_1695960565169520640_n.jpg?_nc_cat=105&_nc_sid=b9115d&_nc_ohc=-9RAvF0m1hIAX_sL835&_nc_ht=scontent.fcai20-2.fna&oh=ac6d2f33f51a44172f77884341fbc54a&oe=5F2FE437">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-12 ">
+                                <button class="btn btn-secondary"><span style="color: tomato;"><i
+                                            class="fas fa-heart mr-2"></i></span>Like</button>
+                                <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 shadow">
+                    <div class="container">
+                        <div class="row mt-4">
+                            <div class="col-8 col-lg-10 d-inline-flex">
+                                <img class="rounded-circle" style="width: 4rem; height: 4rem;"
+                                    src="https://www.newidea.com.au/media/67740/mickey-main.jpg">
+                                <span class="ml-2">
+                                    <h3 class="mb-0">Mohamed AbdElHares</h3>
+                                    <small> Volunteer Activity Manager, Mohandseen</small>
+                                </span>
+                            </div>
+                            <div class="col-4 col-lg-2">
+                                <p class="mt-3 ml-4">23 min</p>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    بسم الله ⁦✌️⁩😌
+                                    من مبدأ ان احنا بنحاول نطول ف المكان ف الطبيعي ان نعرض شغلنا ل بعض علشان نتعلم من
+                                    افكار بعض ...ف لم يبقا عندنا ايفنتات او حاجات اشتغلنا عليها هنبدأ ننزل بوست
+                                    بتفاصيلها ⁦🤸🏻‍♂️
+                                    هحاول ادخلكم ف ااكوليس شويه
+                                    <br>
+                                    اوتنج نشيط:
+                                    مبدأيا كان عندنا محاولات فشله من اول شهر ٤ لحد شهر ٧ ف اكتر من مكان او اكتر من فكره
+                                    ... كان اسهل حاجه بنطلب السلفه و معانا الفلوس بس مش هعرفين نظبط الدنيا 😂 *متعملوش
+                                    اوتنج مع فريق العمل يا شباب* 😂⁦✌️⁩
+                                    بس الحمد لله المره ديه انفصلنا ...بقا فيه حد دماغه ف اليوم كله Ahmmed R. Reefaat
+                                    ⁦❤️⁩🔥
+                                    و كان معانا ف تنظيم اليوم Manar Tarek 🔥⁦✌️⁩
+                                    الفكره الاول ان احنا نروح مطعم ناكل و نمشي كأنها عزومه
+                                    لقينا الموضوع ممل شويه و مش اوتنج ف فركنا ف مكان نروحوا و نلعب شويه ف دورنا علي
+                                    المكان و كده
+                                    <br>
+                                    اليوم كان ...٤ ساعات تقريبا بدأنا ب شويه العاب خفيفه كسرنا الحاجز اللي بين المتطوعين
+                                    بدأنا نقسم مجموعات و نلعب افلام 😂⁦❤️⁩
+                                    الاكل جلنا دليفري ....كلنا و كده و بعد كده كان فيه شويه لعب حر بقا سبنا المتطوعين
+                                    ينتشروا برحتهم بعد كده جبنا تورتة ايس كريم و عملنا عيد ميلاد متطوعه ....يعني بعد كده
+                                    شويه حاجات و خلصنا. 🤸🏻‍♂️⁩
+                                    العدد:5 فريق 2 ترقيات 18 نشيط
+                                    تكلفه اليوم للفرد:
+                                    -٢٥ حجز مكان
+                                    - الاكل كان فيه سنجل ب ٥٣ و الدبل ب ٧٣
+                                    ......شويه حاجات بقا التورته ب ٣٠٠ و بيبس و حاجات كده 🤔
+                                    فيه صور للمكان ف الكومنتات
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-12 ">
+                                <button class="btn btn-secondary"><span style="color: tomato;"><i
+                                            class="fas fa-heart mr-2"></i></span>Like</button>
+                                <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-3 ">
-                <h4 class="float-left">2_Mohandsen</h4>
+            <!-- End of the middle section-->
+
+            <!-- Right Section -->
+            <div class="col-md-2">
+                <div class="card text-center shadow pt-4">
+                    <p>Upcoming Events:</p>
+                    <p><strong>Session</strong></p>
+                    <p>Friday 15:00</p>
+                    <p><button class="btn btn-info my-2" style="width: 7rem;">Info</button></p>
+                </div>
             </div>
-            <div class="col-9 progress p-0" style="height: 3rem;">
-                <div class="progress-bar bg-secondary " role="progressbar" style="width: 80%;" aria-valuenow="50"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-3 ">
-                <h4 class="float-left">3_New cairo</h4>
-            </div>
-            <div class="col-9 progress p-0" style="height: 3rem;">
-                <div class="progress-bar bg-secondary " role="progressbar" style="width: 75%;" aria-valuenow="50"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-3 ">
-                <h4 class="float-left">4_mokatam</h4>
-            </div>
-            <div class="col-9 progress p-0" style="height: 3rem;">
-                <div class="progress-bar bg-secondary " role="progressbar" style="width: 70%;" aria-valuenow="50"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-3 ">
-                <h4 class="float-left">5_elm3ady</h4>
-            </div>
-            <div class="col-9 progress p-0" style="height: 3rem;">
-                <div class="progress-bar bg-secondary " role="progressbar" style="width: 50%;" aria-valuenow="50"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+            <!-- End of the right section -->
         </div>
     </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card text-center">
-                  <p>Upcoming Events:</p>
-                  <p><strong>Session</strong></p>
-                  <p >Friday 15:00</p>
-                  <p><button class="btn btn-info">Info</button></p>
-              </div>
-        </div>
-    </div>
+
+    <footer>
+        <h1>end of the page</h1>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
