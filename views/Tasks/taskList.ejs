@@ -18,32 +18,21 @@
             <h1>Pending</h1>
           </button>
           <div class="collapse show" id="pending">
-            <div class="card shadow">
-              <div class="card-header">
-                <%= tasks[0] %>
+            <% for(let task of tasks){ %>
+              <div class="card shadow">
+                <div class="card-header">
+                  Task
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><%= task.title %></h5>
+                  <p class="card-text"><%= task.description %></p>
+                  <a href="#" class="btn btn-success">Done</a>
+                </div>
+                <div class="card-footer">
+                  2 days ago
+                </div>
               </div>
-              <div class="card-body">
-                <h5 class="card-title">شيت المتابعة</h5>
-                <p class="card-text">مطلوب رفع شيت المتابعة يوم 15</p>
-                <a href="#" class="btn btn-success">Done</a>
-              </div>
-              <div class="card-footer">
-                2 days ago
-              </div>
-            </div>
-            <div class="card shadow">
-              <div class="card-header">
-                Task
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">شيت المتابعة</h5>
-                <p class="card-text">مطلوب رفع شيت المتابعة يوم 1</p>
-                <a href="#" class="btn btn-success">Done</a>
-              </div>
-              <div class="card-footer">
-                2 days ago
-              </div>
-            </div>
+            <% } %>
           </div>
         </div>
         <div class="container done text-center col-md-6">
