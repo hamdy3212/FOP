@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>FOP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/dc47a1c277.js" crossorigin="anonymous"></script>
-    <title>MAD</title>
-
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: #e3f2fd;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">MAD</a>
+            <a class="navbar-brand" href="/">FOP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,7 +34,7 @@
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="login.html">Login</a>
@@ -45,7 +43,7 @@
                         <a class="nav-link" href="signup.html">Sign up</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="/Tasks/addTask.html">Add task</a>
+                        <a class="nav-link" href="./Tasks/addTask">Add task</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>
@@ -60,7 +58,7 @@
             <!-- Left Section -->
             <div class="col-md-3">
                 <div class="left-section">
-                    <div class="card shadow">
+                    <div class="card user-details shadow">
                         <h5 class="card-title mx-auto mt-3">Hamdy Youssef</h5>
                         <img class="card-img-top mx-auto rounded-circle" style="width: 7rem; height: 7rem;"
                             src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/2/2c/New_Timmy_Stock.png/revision/latest/scale-to-width-down/340?cb=20200127001833&path-prefix=en"
@@ -72,21 +70,21 @@
                             <p><i class="fas fa-birthday-cake mr-2"></i> Dec 1, 1998</p>
                         </div>
                     </div>
-                    <div class="card my-3 shadow">
+                    <div class="card left-nav shadow">
                         <div class="list-group">
-                            <a href="./Tasks/taskList.html"
-                                class="list-group-item list-group-item-action list-group-item-secondary active">
+                            <a href="./Tasks/taskList"
+                                class="list-group-item list-group-item-action list-group-item-secondary">
                                 <i class="fas fa-tasks mr-3 fa-lg"></i></i>Tasks</a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1" aria-disabled="true">
                                 <i class="fas fa-tasks mr-3 fa-lg"></i></i>Given Tasks</a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1" aria-disabled="true">
                                 <i class="far fa-calendar-check fa-lg mr-3"></i>Events
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1" aria-disabled="true">
                                 <i class="far fa-calendar-check fa-lg mr-3"></i>Plan
                             </a>
                             <a href="statistics.html"
-                                class="list-group-item list-group-item-action list-group-item-secondary">
+                                class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1" aria-disabled="true">
                                 <i class="fas fa-chart-bar fa-lg mr-3"></i>Statistics
                             </a>
                         </div>
@@ -97,7 +95,7 @@
 
             <!-- Middle Section-->
             <div class="col-md-7 mt-5 middle-section">
-                <div class="card add-post mb-3 shadow">
+                <div class="card add-post shadow">
                     <div class="container">
                         <form>
                             <div class="form-group mt-2">
@@ -114,7 +112,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="card post mb-3 shadow">
+                <div class="card post shadow">
                     <div class="container">
                         <div class="row mt-4">
                             <div class="col-8 col-lg-10 d-inline-flex">
@@ -175,7 +173,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card post mb-3 shadow">
+                <div class="card post shadow">
                     <div class="container">
                         <div class="row mt-4">
                             <div class="col-8 col-lg-10 d-inline-flex">
@@ -224,7 +222,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card post mb-3 shadow">
+                <div class="card post shadow">
                     <div class="container">
                         <div class="row mt-4">
                             <div class="col-8 col-lg-10 d-inline-flex">
@@ -282,7 +280,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card post mb-3 shadow">
+                <div class="card post shadow">
                     <div class="container">
                         <div class="row mt-4">
                             <div class="col-8 col-lg-10 d-inline-flex">
@@ -369,6 +367,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/dc47a1c277.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
