@@ -1,374 +1,276 @@
-<html lang="en">
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/nav.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>FOP</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: #e3f2fd;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">FOP</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i> <span class="badge badge-primary">3</span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">There is a new Event</a>
-                                <a class="dropdown-item" href="#">Hamdy added a new task</a>
-                                <a class="dropdown-item" href="#">There is a new Event</a>
-                                <a class="dropdown-item" href="#">There is a new Event</a>
-                            </div>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <!-- Left Section -->
+        <%- include('./partials/left-section.ejs') %>
+        <!-- End of the left section-->
+
+        <!-- Middle Section-->
+        <div class="col-md-7 mt-5 middle-section">
+            <div class="card add-post shadow">
+                <div class="container">
+                    <form>
+                        <div class="form-group mt-2">
+                            <label for="textarea">Want to anonuce something?</label>
+                            <textarea class="form-control" id="textarea"
+                                placeholder="Welcome to the Website"></textarea>
                         </div>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="signup.html">Sign up</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="./Tasks/addTask">Add task</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                </ul>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Upload Photo</label>
+                            <input type="file" class="form-control-file" style="width:14rem;"
+                                id="exampleFormControlFile1">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-25">Post</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card post shadow">
+                <div class="container">
+                    <div class="row mt-4">
+                        <div class="col-8 col-lg-10 d-inline-flex">
+                            <img class="rounded-circle" style="width: 4rem; height: 4rem;"
+                                src="https://i.pinimg.com/originals/6d/24/41/6d24412ef9de7816b7d2b1a29675e437.png">
+                            <span class="ml-2">
+                                <h3 class="mb-0">Habiba Alaa</h3>
+                                <small>Sub-Head of Follow-Up committee, Nasr City</small>
+                            </span>
+                        </div>
+                        <div class="col-4 col-lg-2">
+                            <p class="mt-3 ml-4">10 min</p>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                متبقي من الزمن 10 أيام على افضل شهر في
+                                السنة ❤
+                                <br>
+                                اكيد كلنا فرحانين ان رمضان قرب خلاص ...بس بيجي في بالنا من وقت للتاني انه مش هيبقى
+                                زي كل سنة مفيش تراويح ، مفيش قيام ليل في المساجد، مفيش اي تجمعات :")
+                                <br>
+                                بس استنى ....هو احنا ليه نفكر في كده اصلا
+                                تراويح جمع أهل بيتك و صلي كل يوم قيام ليل جمع اهلك و صحي صحابك و ساعدوا بعض على
+                                الطاعات اختموا القرآن زي كل سنة دور على طرق تانية للثواب و أسعى فيها ❤
+                                <br>
+                                ارجع افتكر هو اصلا ليه ربنا فرض علينا الصيام
+                                { يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى
+                                الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ}
+                                التقوى ❤
+                                <br>
+                                أسعى انك تطلع من الشهر ده بأكبر مكسب ممكن ،احنا الدنيا بننغمس فيها كتير و احنا مش
+                                واخدين بالنا و دي فرصة من فرص ربنا فلازم منضيعهاش 😀
+                                <br>
+                                شدوا العزائم والهمم و خلوه من احسن الرمضانات اللي عدت علينا في حياتنا ❤
+                                <br>
+                                و الكورونا وغيره أقدار الله مش هتزول الا لما نرضى بيها ف متقولوش ان دا غضب من ربنا و
+                                ان دا حاجة وحشة لا استقبلوا الأقدار بقلوب راضية ❤
+                                اللهم اكشف عنا البلاء وازح الغمة وردنا إليك رداً جميلاً يارب العالمين و بلغنا رمضان
+                                لا فاقدين و لا مفقودين ❤
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <img class="img-fluid"
+                                src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/92699040_2702924796480629_5332808270056783872_n.jpg?_nc_cat=111&_nc_sid=ca434c&_nc_ohc=fHqRaXYPYM8AX9Gehes&_nc_ht=scontent.fcai20-2.fna&oh=b846e645fbda39750b872060ed12e25e&oe=5F30C27B">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-12 ">
+                            <button class="btn btn-secondary"><span><i
+                                        class="far fa-heart mr-2"></i></span>Like</button>
+                            <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card post shadow">
+                <div class="container">
+                    <div class="row mt-4">
+                        <div class="col-8 col-lg-10 d-inline-flex">
+                            <img class="rounded-circle" style="width: 4rem; height: 4rem;"
+                                src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/3/3d/Goldie_Goldenglow_stock_image.png.png/revision/latest/scale-to-width-down/340?cb=20200223032511&path-prefix=en">
+                            <span class="ml-2">
+                                <h3 class="mb-0">Salma Wael</h3>
+                                <small>Volunteer at Follow-Up committee, Nasr City</small>
+                            </span>
+                        </div>
+                        <div class="col-4 col-lg-2">
+                            <p class="mt-3 ml-4">6 hr</p>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                بأنتوا عارفين أهمية الكلمة الطيبة و أجرها عند ربنا إيه؟🤔
+                                طب عارفين إن ربنا سبحانه وتعالى ربط شكره بشكر الناس! 😲
+                                فيه حديث للرسول صلى الله عليه وسلم بيقول:
+                                (من لم يشكر الناس لم يشكر الله )
+                                و دا عشان عطاء ربنا و نفعه لينا بيوصلنا عن طريق عباده ف لو إنت مشكرتش الناس دي كأنك
+                                ملاحظتش عطاء ربنا ليك! 🤷🏻‍♀️
+                                <br>
+                                و عشان محدش فينا يحب يكون من الناس دي، دور كل واحد فينا هنا إننا نشكر الناس اللي
+                                بتساعد و الناس اللي بتمد إيدها لغيرها دورنا نشكرهم و ننشر في قلوبهم الإيجابية و
+                                البهجة و نحمسهم إنهم يزيدوا في الخير دا و نعرفهم إنهم بيعملوا حاجة حلوة أوي و أجرها
+                                عظيم ❤️
+                                <br>
+                                ف محتاجين كلنا ندخل على اللينكات اللي في الكومنت تحت👇🏼 و ننشر فيها الطاقة
+                                الإيجابية و نغلب الناس السلبية فيها🏃‍♀️
+                                <br>
+                                أي حد هيفتح يكلمني يعرفني، و ياريت كلنا نرد 👀
+                                ها مين قال معانا 💪🏻
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-12 ">
+                            <button class="btn btn-secondary"><span><i
+                                        class="far fa-heart mr-2"></i></span>Like</button>
+                            <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card post shadow">
+                <div class="container">
+                    <div class="row mt-4">
+                        <div class="col-8 col-lg-10 d-inline-flex">
+                            <a href="#"><img class="rounded-circle" style="width: 4rem; height: 4rem;"
+                                    src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/d/d5/WandaFOP.png/revision/latest/scale-to-width-down/340?cb=20191007021646&path-prefix=en">
+                            </a>
+                            <span class="ml-2">
+                                <h3 class="mb-0">Nada AbdElRahman </h3>
+                                <small class="float-right">Technical director of the Follow-Up committee,
+                                    October</small>
+                            </span>
+                        </div>
+                        <div class="col-4 col-lg-2">
+                            <p class="mt-3 ml-4">2 day</p>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                تم ب حمدالله عمل تدريب نشيط المستوى الاول للدفعه الاولى ⁦❤️⁩🙈
+                                بحضور ٨٥ متطوع نشيط
+                                اليوم كان راائع جداا و من انجح الايام اللى عملناها ك لجنه متابعه و المتطوعين خارجين
+                                مبسوطين و متحمسين للتدريب اللى جاى
+                                شكرااا جدااا هيدات المتابعه الجبارين جدااا ربنا يكرمكم يا رب و اليوم عمره ما كان
+                                هينجح
+                                لولاكم و زى ما جوده و كامب امبارح قال انكم عنوان قائمه كبيره من الإنجازات و لعل ال
+                                ٨٥
+                                متطوع دول يكونو الصدقه الجاريه لينا يا رب ان شاء الله ⁦❤️⁩
+                                #اداره_تطوع_نشاط_الفرز 🙈⁦❤️⁩
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="img-fluid"
+                                src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87146945_2833505540063765_5556233997803061248_n.jpg?_nc_cat=108&_nc_sid=b9115d&_nc_ohc=guM85YAcCRAAX-Nc7bQ&_nc_ht=scontent.fcai20-2.fna&oh=2bb8e19fba2357b8d647938ad9d4cfbc&oe=5F2D90F8">
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-6">
+                            <img class="img-fluid"
+                                src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87155294_2833505583397094_6100260746224992256_n.jpg?_nc_cat=100&_nc_sid=b9115d&_nc_ohc=CpYxMXvnSrwAX-X7gIl&_nc_ht=scontent.fcai20-2.fna&oh=c30faac2760061a33ac2b17f98bddcb7&oe=5F2FDB0A">
+                        </div>
+                        <div class="col-6">
+                            <img class="img-fluid"
+                                src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87175399_2833505646730421_1695960565169520640_n.jpg?_nc_cat=105&_nc_sid=b9115d&_nc_ohc=-9RAvF0m1hIAX_sL835&_nc_ht=scontent.fcai20-2.fna&oh=ac6d2f33f51a44172f77884341fbc54a&oe=5F2FE437">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-12 ">
+                            <button class="btn btn-secondary"><i class="far fa-heart mr-2"></i>Like</button>
+                            <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card post shadow">
+                <div class="container">
+                    <div class="row mt-4">
+                        <div class="col-8 col-lg-10 d-inline-flex">
+                            <img class="rounded-circle" style="width: 4rem; height: 4rem;"
+                                src="https://nick-intl.mtvnimages.com/uri/mgid:file:gsp:kids-assets:/nick/properties/fairly-oddparents/characters/cosmo-character-web-desktop.png?height=0&width=480&matte=true&crop=false">
+                            <span class="ml-2">
+                                <h3 class="mb-0">Mohamed AbdElHares</h3>
+                                <small> Volunteer Activity Manager, Mohandseen</small>
+                            </span>
+                        </div>
+                        <div class="col-4 col-lg-2">
+                            <p class="mt-3 ml-4">1 week</p>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                بسم الله ⁦✌️⁩😌
+                                من مبدأ ان احنا بنحاول نطول ف المكان ف الطبيعي ان نعرض شغلنا ل بعض علشان نتعلم من
+                                افكار بعض ...ف لم يبقا عندنا ايفنتات او حاجات اشتغلنا عليها هنبدأ ننزل بوست
+                                بتفاصيلها ⁦🤸🏻‍♂️
+                                هحاول ادخلكم ف ااكوليس شويه
+                                <br>
+                                اوتنج نشيط:
+                                مبدأيا كان عندنا محاولات فشله من اول شهر ٤ لحد شهر ٧ ف اكتر من مكان او اكتر من فكره
+                                ... كان اسهل حاجه بنطلب السلفه و معانا الفلوس بس مش هعرفين نظبط الدنيا 😂 *متعملوش
+                                اوتنج مع فريق العمل يا شباب* 😂⁦✌️⁩
+                                بس الحمد لله المره ديه انفصلنا ...بقا فيه حد دماغه ف اليوم كله Ahmmed R. Reefaat
+                                ⁦❤️⁩🔥
+                                و كان معانا ف تنظيم اليوم Manar Tarek 🔥⁦✌️⁩
+                                الفكره الاول ان احنا نروح مطعم ناكل و نمشي كأنها عزومه
+                                لقينا الموضوع ممل شويه و مش اوتنج ف فركنا ف مكان نروحوا و نلعب شويه ف دورنا علي
+                                المكان و كده
+                                <br>
+                                اليوم كان ...٤ ساعات تقريبا بدأنا ب شويه العاب خفيفه كسرنا الحاجز اللي بين المتطوعين
+                                بدأنا نقسم مجموعات و نلعب افلام 😂⁦❤️⁩
+                                الاكل جلنا دليفري ....كلنا و كده و بعد كده كان فيه شويه لعب حر بقا سبنا المتطوعين
+                                ينتشروا برحتهم بعد كده جبنا تورتة ايس كريم و عملنا عيد ميلاد متطوعه ....يعني بعد كده
+                                شويه حاجات و خلصنا. 🤸🏻‍♂️⁩
+                                العدد:5 فريق 2 ترقيات 18 نشيط
+                                تكلفه اليوم للفرد:
+                                -٢٥ حجز مكان
+                                - الاكل كان فيه سنجل ب ٥٣ و الدبل ب ٧٣
+                                ......شويه حاجات بقا التورته ب ٣٠٠ و بيبس و حاجات كده 🤔
+                                فيه صور للمكان ف الكومنتات
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-12 ">
+                            <button class="btn btn-secondary"><span style="color: tomato;"><i
+                                        class="fas fa-heart mr-2"></i></span>Like</button>
+                            <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of the middle section-->
+
+        <!-- Right Section -->
+        <div class="col-md-2">
+            <div class="right-section">
+                <div class="card text-center shadow pt-4">
+                    <p>Upcoming Events:</p>
+                    <p><strong>Session</strong></p>
+                    <p>Friday 15:00</p>
+                    <p><button class="btn btn-info my-2" style="width: 6rem;">Info</button></p>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <div class="container-fluid mt-5">
-        <div class="row">
-            <!-- Left Section -->
-            <div class="col-md-3">
-                <div class="left-section">
-                    <div class="card user-details shadow">
-                        <h5 class="card-title mx-auto mt-3">Hamdy Youssef</h5>
-                        <img class="card-img-top mx-auto rounded-circle" style="width: 7rem; height: 7rem;"
-                            src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/2/2c/New_Timmy_Stock.png/revision/latest/scale-to-width-down/340?cb=20200127001833&path-prefix=en"
-                            alt="Card image cap">
-                        <hr class="mx-auto" style="width:80%;">
-                        <div class="card-body">
-                            <p><i class="far fa-address-card mr-2"></i>Head of Follow-Up committee</p>
-                            <p><i class="fas fa-home mr-2"></i>Nasr City</p>
-                            <p><i class="fas fa-birthday-cake mr-2"></i> Dec 1, 1998</p>
-                        </div>
-                    </div>
-                    <div class="card left-nav shadow">
-                        <div class="list-group">
-                            <a href="./Tasks/taskList"
-                                class="list-group-item list-group-item-action list-group-item-secondary">
-                                <i class="fas fa-tasks mr-3 fa-lg"></i></i>Tasks</a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1" aria-disabled="true">
-                                <i class="fas fa-tasks mr-3 fa-lg"></i></i>Given Tasks</a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1" aria-disabled="true">
-                                <i class="far fa-calendar-check fa-lg mr-3"></i>Events
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1" aria-disabled="true">
-                                <i class="far fa-calendar-check fa-lg mr-3"></i>Plan
-                            </a>
-                            <a href="statistics.html"
-                                class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1" aria-disabled="true">
-                                <i class="fas fa-chart-bar fa-lg mr-3"></i>Statistics
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End of the left section-->
-
-            <!-- Middle Section-->
-            <div class="col-md-7 mt-5 middle-section">
-                <div class="card add-post shadow">
-                    <div class="container">
-                        <form>
-                            <div class="form-group mt-2">
-                                <label for="textarea">Want to anonuce something?</label>
-                                <textarea class="form-control" id="textarea"
-                                    placeholder="Welcome to the Website"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1">Upload Photo</label>
-                                <input type="file" class="form-control-file" style="width:14rem;"
-                                    id="exampleFormControlFile1">
-                            </div>
-                            <button type="submit" class="btn btn-primary w-25">Post</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="card post shadow">
-                    <div class="container">
-                        <div class="row mt-4">
-                            <div class="col-8 col-lg-10 d-inline-flex">
-                                <img class="rounded-circle" style="width: 4rem; height: 4rem;"
-                                    src="https://i.pinimg.com/originals/6d/24/41/6d24412ef9de7816b7d2b1a29675e437.png">
-                                <span class="ml-2">
-                                    <h3 class="mb-0">Habiba Alaa</h3>
-                                    <small>Sub-Head of Follow-Up committee, Nasr City</small>
-                                </span>
-                            </div>
-                            <div class="col-4 col-lg-2">
-                                <p class="mt-3 ml-4">10 min</p>
-                            </div>
-                        </div>
-                        <hr class="my-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>
-                                    متبقي من الزمن 10 أيام على افضل شهر في
-                                    السنة ❤
-                                    <br>
-                                    اكيد كلنا فرحانين ان رمضان قرب خلاص ...بس بيجي في بالنا من وقت للتاني انه مش هيبقى
-                                    زي كل سنة مفيش تراويح ، مفيش قيام ليل في المساجد، مفيش اي تجمعات :")
-                                    <br>
-                                    بس استنى ....هو احنا ليه نفكر في كده اصلا
-                                    تراويح جمع أهل بيتك و صلي كل يوم قيام ليل جمع اهلك و صحي صحابك و ساعدوا بعض على
-                                    الطاعات اختموا القرآن زي كل سنة دور على طرق تانية للثواب و أسعى فيها ❤
-                                    <br>
-                                    ارجع افتكر هو اصلا ليه ربنا فرض علينا الصيام
-                                    { يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى
-                                    الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ}
-                                    التقوى ❤
-                                    <br>
-                                    أسعى انك تطلع من الشهر ده بأكبر مكسب ممكن ،احنا الدنيا بننغمس فيها كتير و احنا مش
-                                    واخدين بالنا و دي فرصة من فرص ربنا فلازم منضيعهاش 😀
-                                    <br>
-                                    شدوا العزائم والهمم و خلوه من احسن الرمضانات اللي عدت علينا في حياتنا ❤
-                                    <br>
-                                    و الكورونا وغيره أقدار الله مش هتزول الا لما نرضى بيها ف متقولوش ان دا غضب من ربنا و
-                                    ان دا حاجة وحشة لا استقبلوا الأقدار بقلوب راضية ❤
-                                    اللهم اكشف عنا البلاء وازح الغمة وردنا إليك رداً جميلاً يارب العالمين و بلغنا رمضان
-                                    لا فاقدين و لا مفقودين ❤
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-12">
-                                <img class="img-fluid"
-                                    src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/92699040_2702924796480629_5332808270056783872_n.jpg?_nc_cat=111&_nc_sid=ca434c&_nc_ohc=fHqRaXYPYM8AX9Gehes&_nc_ht=scontent.fcai20-2.fna&oh=b846e645fbda39750b872060ed12e25e&oe=5F30C27B">
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-md-12 ">
-                                <button class="btn btn-secondary"><span><i
-                                            class="far fa-heart mr-2"></i></span>Like</button>
-                                <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card post shadow">
-                    <div class="container">
-                        <div class="row mt-4">
-                            <div class="col-8 col-lg-10 d-inline-flex">
-                                <img class="rounded-circle" style="width: 4rem; height: 4rem;"
-                                    src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/3/3d/Goldie_Goldenglow_stock_image.png.png/revision/latest/scale-to-width-down/340?cb=20200223032511&path-prefix=en">
-                                <span class="ml-2">
-                                    <h3 class="mb-0">Salma Wael</h3>
-                                    <small>Volunteer at Follow-Up committee, Nasr City</small>
-                                </span>
-                            </div>
-                            <div class="col-4 col-lg-2">
-                                <p class="mt-3 ml-4">6 hr</p>
-                            </div>
-                        </div>
-                        <hr class="my-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>
-                                    بأنتوا عارفين أهمية الكلمة الطيبة و أجرها عند ربنا إيه؟🤔
-                                    طب عارفين إن ربنا سبحانه وتعالى ربط شكره بشكر الناس! 😲
-                                    فيه حديث للرسول صلى الله عليه وسلم بيقول:
-                                    (من لم يشكر الناس لم يشكر الله )
-                                    و دا عشان عطاء ربنا و نفعه لينا بيوصلنا عن طريق عباده ف لو إنت مشكرتش الناس دي كأنك
-                                    ملاحظتش عطاء ربنا ليك! 🤷🏻‍♀️
-                                    <br>
-                                    و عشان محدش فينا يحب يكون من الناس دي، دور كل واحد فينا هنا إننا نشكر الناس اللي
-                                    بتساعد و الناس اللي بتمد إيدها لغيرها دورنا نشكرهم و ننشر في قلوبهم الإيجابية و
-                                    البهجة و نحمسهم إنهم يزيدوا في الخير دا و نعرفهم إنهم بيعملوا حاجة حلوة أوي و أجرها
-                                    عظيم ❤️
-                                    <br>
-                                    ف محتاجين كلنا ندخل على اللينكات اللي في الكومنت تحت👇🏼 و ننشر فيها الطاقة
-                                    الإيجابية و نغلب الناس السلبية فيها🏃‍♀️
-                                    <br>
-                                    أي حد هيفتح يكلمني يعرفني، و ياريت كلنا نرد 👀
-                                    ها مين قال معانا 💪🏻
-
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-md-12 ">
-                                <button class="btn btn-secondary"><span><i
-                                            class="far fa-heart mr-2"></i></span>Like</button>
-                                <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card post shadow">
-                    <div class="container">
-                        <div class="row mt-4">
-                            <div class="col-8 col-lg-10 d-inline-flex">
-                                <a href="#"><img class="rounded-circle" style="width: 4rem; height: 4rem;"
-                                        src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/d/d5/WandaFOP.png/revision/latest/scale-to-width-down/340?cb=20191007021646&path-prefix=en">
-                                </a>
-                                <span class="ml-2">
-                                    <h3 class="mb-0">Nada AbdElRahman </h3>
-                                    <small class="float-right">Technical director of the Follow-Up committee,
-                                        October</small>
-                                </span>
-                            </div>
-                            <div class="col-4 col-lg-2">
-                                <p class="mt-3 ml-4">2 day</p>
-                            </div>
-                        </div>
-                        <hr class="my-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>
-                                    تم ب حمدالله عمل تدريب نشيط المستوى الاول للدفعه الاولى ⁦❤️⁩🙈
-                                    بحضور ٨٥ متطوع نشيط
-                                    اليوم كان راائع جداا و من انجح الايام اللى عملناها ك لجنه متابعه و المتطوعين خارجين
-                                    مبسوطين و متحمسين للتدريب اللى جاى
-                                    شكرااا جدااا هيدات المتابعه الجبارين جدااا ربنا يكرمكم يا رب و اليوم عمره ما كان
-                                    هينجح
-                                    لولاكم و زى ما جوده و كامب امبارح قال انكم عنوان قائمه كبيره من الإنجازات و لعل ال
-                                    ٨٥
-                                    متطوع دول يكونو الصدقه الجاريه لينا يا رب ان شاء الله ⁦❤️⁩
-                                    #اداره_تطوع_نشاط_الفرز 🙈⁦❤️⁩
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <img class="img-fluid"
-                                    src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87146945_2833505540063765_5556233997803061248_n.jpg?_nc_cat=108&_nc_sid=b9115d&_nc_ohc=guM85YAcCRAAX-Nc7bQ&_nc_ht=scontent.fcai20-2.fna&oh=2bb8e19fba2357b8d647938ad9d4cfbc&oe=5F2D90F8">
-                            </div>
-                        </div>
-                        <div class="row my-2">
-                            <div class="col-6">
-                                <img class="img-fluid"
-                                    src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87155294_2833505583397094_6100260746224992256_n.jpg?_nc_cat=100&_nc_sid=b9115d&_nc_ohc=CpYxMXvnSrwAX-X7gIl&_nc_ht=scontent.fcai20-2.fna&oh=c30faac2760061a33ac2b17f98bddcb7&oe=5F2FDB0A">
-                            </div>
-                            <div class="col-6">
-                                <img class="img-fluid"
-                                    src="https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/87175399_2833505646730421_1695960565169520640_n.jpg?_nc_cat=105&_nc_sid=b9115d&_nc_ohc=-9RAvF0m1hIAX_sL835&_nc_ht=scontent.fcai20-2.fna&oh=ac6d2f33f51a44172f77884341fbc54a&oe=5F2FE437">
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-md-12 ">
-                                <button class="btn btn-secondary"><i class="far fa-heart mr-2"></i>Like</button>
-                                <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card post shadow">
-                    <div class="container">
-                        <div class="row mt-4">
-                            <div class="col-8 col-lg-10 d-inline-flex">
-                                <img class="rounded-circle" style="width: 4rem; height: 4rem;"
-                                    src="https://nick-intl.mtvnimages.com/uri/mgid:file:gsp:kids-assets:/nick/properties/fairly-oddparents/characters/cosmo-character-web-desktop.png?height=0&width=480&matte=true&crop=false">
-                                <span class="ml-2">
-                                    <h3 class="mb-0">Mohamed AbdElHares</h3>
-                                    <small> Volunteer Activity Manager, Mohandseen</small>
-                                </span>
-                            </div>
-                            <div class="col-4 col-lg-2">
-                                <p class="mt-3 ml-4">1 week</p>
-                            </div>
-                        </div>
-                        <hr class="my-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>
-                                    بسم الله ⁦✌️⁩😌
-                                    من مبدأ ان احنا بنحاول نطول ف المكان ف الطبيعي ان نعرض شغلنا ل بعض علشان نتعلم من
-                                    افكار بعض ...ف لم يبقا عندنا ايفنتات او حاجات اشتغلنا عليها هنبدأ ننزل بوست
-                                    بتفاصيلها ⁦🤸🏻‍♂️
-                                    هحاول ادخلكم ف ااكوليس شويه
-                                    <br>
-                                    اوتنج نشيط:
-                                    مبدأيا كان عندنا محاولات فشله من اول شهر ٤ لحد شهر ٧ ف اكتر من مكان او اكتر من فكره
-                                    ... كان اسهل حاجه بنطلب السلفه و معانا الفلوس بس مش هعرفين نظبط الدنيا 😂 *متعملوش
-                                    اوتنج مع فريق العمل يا شباب* 😂⁦✌️⁩
-                                    بس الحمد لله المره ديه انفصلنا ...بقا فيه حد دماغه ف اليوم كله Ahmmed R. Reefaat
-                                    ⁦❤️⁩🔥
-                                    و كان معانا ف تنظيم اليوم Manar Tarek 🔥⁦✌️⁩
-                                    الفكره الاول ان احنا نروح مطعم ناكل و نمشي كأنها عزومه
-                                    لقينا الموضوع ممل شويه و مش اوتنج ف فركنا ف مكان نروحوا و نلعب شويه ف دورنا علي
-                                    المكان و كده
-                                    <br>
-                                    اليوم كان ...٤ ساعات تقريبا بدأنا ب شويه العاب خفيفه كسرنا الحاجز اللي بين المتطوعين
-                                    بدأنا نقسم مجموعات و نلعب افلام 😂⁦❤️⁩
-                                    الاكل جلنا دليفري ....كلنا و كده و بعد كده كان فيه شويه لعب حر بقا سبنا المتطوعين
-                                    ينتشروا برحتهم بعد كده جبنا تورتة ايس كريم و عملنا عيد ميلاد متطوعه ....يعني بعد كده
-                                    شويه حاجات و خلصنا. 🤸🏻‍♂️⁩
-                                    العدد:5 فريق 2 ترقيات 18 نشيط
-                                    تكلفه اليوم للفرد:
-                                    -٢٥ حجز مكان
-                                    - الاكل كان فيه سنجل ب ٥٣ و الدبل ب ٧٣
-                                    ......شويه حاجات بقا التورته ب ٣٠٠ و بيبس و حاجات كده 🤔
-                                    فيه صور للمكان ف الكومنتات
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-md-12 ">
-                                <button class="btn btn-secondary"><span style="color: tomato;"><i
-                                            class="fas fa-heart mr-2"></i></span>Like</button>
-                                <button class="btn btn-secondary"><i class="far fa-comment mr-2"></i>Comment</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End of the middle section-->
-
-            <!-- Right Section -->
-            <div class="col-md-2">
-                <div class="right-section">
-                    <div class="card text-center shadow pt-4">
-                        <p>Upcoming Events:</p>
-                        <p><strong>Session</strong></p>
-                        <p>Friday 15:00</p>
-                        <p><button class="btn btn-info my-2" style="width: 6rem;">Info</button></p>
-                    </div>
-                </div>
-            </div>
-            <!-- End of the right section -->
-        </div>
-
+        <!-- End of the right section -->
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/dc47a1c277.js" crossorigin="anonymous"></script>
+</div>
 
-</body>
-
-</html>
+<%- include('./partials/footer.ejs') %>
