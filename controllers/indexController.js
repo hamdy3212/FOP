@@ -1,7 +1,8 @@
 //register_get, register_post, login_get, login_post, logout
-const 
-    User = require('../models/user'),
-    register_get = (req, res) => {
+const
+    passport      = require('passport'),
+    User          = require('../models/user'),
+    register_get  = (req, res) => {
         res.render('register');
     },
     register_post = (req, res) => {
@@ -18,10 +19,14 @@ const
                 });
             });
     },
-    login_get = (req, res) => {
+    login_get     = (req, res) => {
         res.render('login');
     },
-    logout = (req, res) => {
+    login_post    = passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: '/login'
+    }),
+    logout        = (req, res) => {
         req.logOut();
         res.redirect('/');
     };
@@ -29,5 +34,6 @@ module.exports = {
     register_get,
     register_post,
     login_get,
+    login_post,
     logout
 }

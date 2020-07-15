@@ -6,9 +6,10 @@
 <div class="container-fluid mt-5">
   <div class="row">
     <!-- Left Section -->
+    <div class="col-md-3">
     <%- include('../partials/left-section.ejs') %>
+    </div>
     <!-- End of the left section-->
-
     <!-- Right Section -->
     <div class="col-md-9 mt-5">
       <div class="row">
@@ -21,7 +22,7 @@
             <% for(let task of tasks){ %>
               <div class="card shadow">
                 <div class="card-header">
-                  Task
+                  Task from <%= task.author.username %>
                 </div>
                 <div class="card-body">
                   <h5 class="card-title"><%= task.title %></h5>
@@ -29,7 +30,7 @@
                   <a href="#" class="btn btn-success">Done</a>
                 </div>
                 <div class="card-footer">
-                  2 days ago
+                  <%= task.deadline %>
                 </div>
               </div>
             <% } %>

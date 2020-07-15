@@ -7,7 +7,14 @@ const User = new Schema({
     username: String,
     password: String,
     branch: String,
-    position: String
+    position: String,
+    takenTasks: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Task"
+        }
+    ]
+
 })
 User.plugin(passportLocalMongoose);
 module.exports = mongoose.model('User', User);

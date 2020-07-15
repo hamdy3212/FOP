@@ -1,6 +1,5 @@
 const   express         = require('express'),
         router          = express.Router(),
-        passport        = require('passport'),
         indexController = require('../controllers/indexController');
 
 // register
@@ -9,11 +8,7 @@ router.post('/register', indexController.register_post);
 
 // login
 router.get('/login', indexController.login_get);
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login'
-})
-);
+router.post('/login', indexController.login_post);
 
 // logout
 router.get('/logout', indexController.logout);

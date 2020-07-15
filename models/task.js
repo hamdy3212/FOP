@@ -1,10 +1,17 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Task = new Schema({
-    author: String,
-    title: String,
-    selected: String,
-    description: String,
+    title       : String,
+    assignee    : String,
+    description : String,
+    deadline    : Date,
+    author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String,
+    }
 },
     { timestamps: true });
-module.exports = mongoose.model('task', Task);
+module.exports = mongoose.model('Task', Task);
