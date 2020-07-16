@@ -1,11 +1,11 @@
-const   express        = require('express'),
-        app            = express(),
-        mongoose       = require('mongoose'),
-        User           = require('./models/user'),
-        passport       = require('passport'),
-        LocalStrategy  = require('passport-local'),
-        taskRoutes     = require('./routes/tasks'),
-        indexRoutes    = require('./routes/index');
+const express = require('express'),
+    app = express(),
+    mongoose = require('mongoose'),
+    User = require('./models/user'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local'),
+    taskRoutes = require('./routes/tasks'),
+    indexRoutes = require('./routes/index');
 
 
 // connet to DB
@@ -16,6 +16,7 @@ mongoose.connect('mongodb://localhost:27017/FOP', {
 })
     .then(result => app.listen(3000))
     .catch(err => console.log(err));
+mongoose.set('useFindAndModify', false);
 
 // register view engine
 app.set('view engine', 'ejs');
@@ -32,15 +33,16 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 // middleware and static folies
 app.use(express.static('public'));
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     next();
 })
 app.use(express.urlencoded({ extended: true }));
-const isLoggedIn = (req, res, next)=>{
-    if(req.isAuthenticated()){
+app.use(express.json());
+const isLoggedIn = (req, res, next) => {
+    if (req.isAuthenticated()) {
         return next();
-    }else{
+    } else {
         res.redirect('/login');
     }
 }

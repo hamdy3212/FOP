@@ -7,33 +7,18 @@
   <div class="row">
     <!-- Left Section -->
     <div class="col-md-3">
-    <%- include('../partials/left-section.ejs') %>
+      <%- include('../partials/left-nav.ejs') %>
     </div>
     <!-- End of the left section-->
     <!-- Right Section -->
     <div class="col-md-9 mt-5">
-      <div class="row">
+      <div class="row"> 
         <div class="container pending text-center col-md-6">
           <button class="btn white-text btn-warning btn-block shadow" type="button" data-toggle="collapse"
             data-target="#pending" aria-expanded="false" aria-controls="pending">
             <h1>Pending</h1>
           </button>
           <div class="collapse show" id="pending">
-            <% for(let task of tasks){ %>
-              <div class="card shadow">
-                <div class="card-header">
-                  Task from <%= task.author.username %>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title"><%= task.title %></h5>
-                  <p class="card-text"><%= task.description %></p>
-                  <a href="#" class="btn btn-success">Done</a>
-                </div>
-                <div class="card-footer">
-                  <%= task.deadline %>
-                </div>
-              </div>
-            <% } %>
           </div>
         </div>
         <div class="container done text-center col-md-6">
@@ -42,19 +27,6 @@
             <h1>Done</h1>
           </button>
           <div class="collapse show" id="done">
-            <div class="card">
-              <div class="card-header">
-                Task
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">مشاركات</h5>
-                <p class="card-text">مطلوب من مدينة نصر يكمل 70 مشاركة خلال اسبوع</p>
-                <a href="#" class="btn btn-danger">Undone</a>
-              </div>
-              <div class="card-footer">
-                2 days ago
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -63,6 +35,5 @@
   </div>
 </div>
 
-<script src="https://kit.fontawesome.com/dc47a1c277.js" crossorigin="anonymous"></script>
-
+<script src="/tasks.js"></script>
 <%- include('../partials/footer.ejs') %>

@@ -1,4 +1,4 @@
-.left-section{
+.left-section {
   position: fixed;
   top: 6rem;
 }
@@ -8,17 +8,16 @@
     top: 6rem;
   }
 }
-
-.right-section{
+.right-section {
   position: sticky;
   top: 6rem;
 }
-.card{
+.card {
   margin-bottom: 20px;
 }
-.pending .card .card-header{
+.pending .card .card-header {
   background-color: #ffd23d;
 }
-.done .card .card-header{
+.done .card .card-header {
   background-color: #34eb43;
 }

@@ -11,7 +11,8 @@ const Task = new Schema({
             ref: "User"
         },
         username: String,
-    }
+    },
+    status: String
 },
     { timestamps: true });
 module.exports = mongoose.model('Task', Task);
