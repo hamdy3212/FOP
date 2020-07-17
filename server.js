@@ -14,7 +14,7 @@ mongoose.connect('mongodb+srv://hamdy:fasterzero@fob.jtsug.mongodb.net/fob?retry
     useUnifiedTopology: true,
     useCreateIndex: true
 })
-    .then(result => app.listen(3000))
+    .then(result => app.listen(process.env.PORT || 3000))
     .catch(err => console.log(err));
 mongoose.set('useFindAndModify', false);
 
