@@ -27,7 +27,7 @@ const
     task_add_get = (req, res) => {
         User.find().exec((err, users) => {
             if (err) return console.log(err);
-            res.render('tasks/addtask', { users });
+            res.render('tasks/addTask', { users });
         })
     },
     task_add_post = (req, res) => {
