@@ -9,7 +9,7 @@ const express = require('express'),
 
 
 // connet to DB
-mongoose.connect('mongodb://localhost:27017/FOP', {
+mongoose.connect('mongodb+srv://hamdy:fasterzero@fob.jtsug.mongodb.net/fob?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
