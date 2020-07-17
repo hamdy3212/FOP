@@ -24,12 +24,17 @@ const res = fetch("takenTasks/data", {
             cardHeader.classList.add("card-header");
             cardText.classList.add("card-text");
             cardBody.classList.add("card-body");
-            cardButton.classList.add("card-button", "btn", "btn-success");
+            if (task.status == "pending") {
+                cardButton.classList.add("card-button", "btn", "btn-success");
+                cardButton.textContent = "Done";
+            } else {
+                cardButton.classList.add("card-button", "btn", "btn-danger");
+                cardButton.textContent = "Undone";
+            }
             cardFooter.classList.add("card-footer");
             cardText.textContent = task.description;
             cardHeader.textContent = "Task from " + task.author.username;
             cardTitle.textContent = task.title;
-            cardButton.textContent = "Done";
             cardFooter.textContent = task.deadline;
             cardButton.setAttribute("href", "/tasks/takenTasks");
             cardButton.addEventListener("click", async () => {

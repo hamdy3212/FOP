@@ -1,13 +1,8 @@
 .left-section {
-  position: fixed;
+  position: sticky;
   top: 6rem;
 }
-@media only screen and (max-width: 600px) {
-  .left-section{
-    position: sticky;
-    top: 6rem;
-  }
-}
+
 .right-section {
   position: sticky;
   top: 6rem;
