@@ -12,24 +12,22 @@
         </div>
     </div>
     <div class="card left-nav shadow">
-        <div class="list-group">
-            <a href="/Tasks/taskList" class="list-group-item list-group-item-action list-group-item-secondary">
-                <i class="fas fa-tasks mr-3 fa-lg"></i></i>Tasks</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1"
-                aria-disabled="true">
+        <div class="list-group" id="leftNav">
+            <a href="/Tasks/takenTasks" id="takenTasksButton" class="list-group-item list-group-item-action list-group-item-info">
+                <i class="fas fa-tasks mr-3 fa-lg"></i></i>Taken Tasks</a>
+            <a href="/Tasks/givenTasks" id="givenTasksButton" class="list-group-item list-group-item-action list-group-item-info">
                 <i class="fas fa-tasks mr-3 fa-lg"></i></i>Given Tasks</a>
+            <a href="#"
+                class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1"
+                aria-disabled="true">
+                <i class="far fa-calendar-check fa-lg mr-3"></i>Events</a>
             <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1"
                 aria-disabled="true">
-                <i class="far fa-calendar-check fa-lg mr-3"></i>Events
-            </a>
+                <i class="far fa-calendar-check fa-lg mr-3"></i>Plan</a>
             <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1"
                 aria-disabled="true">
-                <i class="far fa-calendar-check fa-lg mr-3"></i>Plan
-            </a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1"
-                aria-disabled="true">
-                <i class="fas fa-chart-bar fa-lg mr-3"></i>Statistics
-            </a>
+                <i class="fas fa-chart-bar fa-lg mr-3"></i>Statistics</a>
         </div>
     </div>
 </div>
+<script src="/index.js"></script>

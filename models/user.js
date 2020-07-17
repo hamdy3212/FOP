@@ -8,7 +8,7 @@ const User = new Schema({
     password: String,
     branch: String,
     position: String,
-    takenTasks: [
+    tasks: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Task"

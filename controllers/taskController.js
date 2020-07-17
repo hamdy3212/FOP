@@ -2,13 +2,26 @@
 const
     Task = require('../models/task'),
     User = require('../models/user'),
-    task_data = (req, res) => {
+    takenTasks_get = (req, res) => {
         User.findById(req.user._id)
-            .populate('takenTasks')
+            .populate('tasks')
+            .exec((err, populatedTasks) => {
+                if (err) return console.log(err);
+                const tasks = populatedTasks.tasks;
+                res.json(tasks);
+            });
+    },
+    givenTasks_get = (req, res) => {
+        Task.find()
             .exec((err, tasks) => {
                 if (err) return console.log(err);
-                const t = tasks.takenTasks;
-                res.send(t);
+                const givenTasks = [];
+                for (const task of tasks) {
+                    if(task.author.id.equals(req.user._id)){
+                        givenTasks.push(task);
+                    }
+                }
+                res.json(givenTasks);
             });
     },
     task_add_get = (req, res) => {
@@ -33,9 +46,9 @@ const
         task.save()
             .then(async (result) => {
                 const selectedUser = await User.findOne({ username: data.assignee });
-                await selectedUser.takenTasks.push(result);
+                await selectedUser.tasks.push(result);
                 await selectedUser.save();
-                res.redirect('/tasks/tasklist');
+                res.redirect('/tasks/takenTasks');
             })
             .catch((err) => {
                 console.log(err);
@@ -44,21 +57,26 @@ const
     },
     task_editStatus_put = (req, res) => {
         if (req.body.status == "pending") {
-            Task.findByIdAndUpdate(req.body._id, { status: "done" }, { new: true }, (err, updated) => {
-                if (err) return console.log(err)
-
-            })
+            Task.findByIdAndUpdate(req.body._id,
+                { status: "done" },
+                { new: true },
+                (err, updated) => {
+                    if (err) return console.log(err)
+                })
         } else {
-            Task.findByIdAndUpdate(req.body._id, { status: "pending" }, { new: true }, (err, updated) => {
-                if (err) return console.log(err)
-
-            })
+            Task.findByIdAndUpdate(req.body._id,
+                { status: "pending" },
+                { new: true },
+                (err, updated) => {
+                    if (err) return console.log(err)
+                })
         }
     }
 
 module.exports = {
     task_add_get,
     task_add_post,
-    task_data,
+    takenTasks_get,
+    givenTasks_get,
     task_editStatus_put
 }
