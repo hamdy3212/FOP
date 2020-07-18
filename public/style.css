@@ -10,9 +10,7 @@
 .card {
   margin-bottom: 20px;
 }
-.pending .card .card-header {
-  background-color: #ffd23d;
-}
-.done .card .card-header {
-  background-color: #34eb43;
+
+button {
+  border: none;
 }

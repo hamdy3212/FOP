@@ -2,7 +2,7 @@
 const done = document.getElementById('done');
 const pending = document.getElementById('pending');
 document.getElementById("takenTasksButton").classList.add("active");
-
+let i = 0;
 
 const res = fetch("takenTasks/data", {
     headers: {
@@ -14,27 +14,28 @@ const res = fetch("takenTasks/data", {
     .then(tasks => {
         for (const task of tasks) {
             const card = document.createElement('div'),
-                cardHeader = document.createElement('div'),
+                cardHeader = document.createElement('button'),
                 cardBody = document.createElement('div'),
                 cardTitle = document.createElement('h5'),
                 cardText = document.createElement('p'),
                 cardButton = document.createElement('a'),
-                cardFooter = document.createElement('div');
-            card.classList.add("card", "shadow", "pending")
-            cardHeader.classList.add("card-header");
+                cardFooter = document.createElement('div'),
+                cardCollapse = document.createElement('div');
+            cardCollapse.classList.add("collapse");
+            cardCollapse.setAttribute("id", `cardContent${i}`);
+            cardHeader.setAttribute("data-toggle", "collapse");
+            cardHeader.setAttribute("data-target", `#cardContent${i}`);
+            cardHeader.setAttribute("aria-expanded", "false");
+            cardHeader.setAttribute("aria-controls", `cardContent${i}`);
+            cardHeader.setAttribute("type", "button");
+            card.classList.add("card", "shadow", "pending", "mb-2")
             cardText.classList.add("card-text");
             cardBody.classList.add("card-body");
-            if (task.status == "pending") {
-                cardButton.classList.add("card-button", "btn", "btn-success");
-                cardButton.textContent = "Done";
-            } else {
-                cardButton.classList.add("card-button", "btn", "btn-danger");
-                cardButton.textContent = "Undone";
-            }
+
             cardFooter.classList.add("card-footer");
             cardText.textContent = task.description;
-            cardHeader.textContent = "Task from " + task.author.username;
-            cardTitle.textContent = task.title;
+            cardHeader.textContent = task.title
+            cardTitle.textContent = "Task from " + task.author.username;
             cardFooter.textContent = task.deadline;
             cardButton.setAttribute("href", "/tasks/takenTasks");
             cardButton.addEventListener("click", async () => {
@@ -54,10 +55,24 @@ const res = fetch("takenTasks/data", {
             cardBody.append(cardTitle);
             cardBody.append(cardText);
             cardBody.append(cardButton);
+            cardCollapse.append(cardBody);
+            cardCollapse.append(cardFooter);
+
             card.append(cardHeader);
-            card.append(cardBody);
-            card.append(cardFooter);
-            if (task.status == "pending") pending.append(card);
-            if (task.status == "done") done.append(card);
+            card.append(cardCollapse);
+            if (task.status == "pending") {
+                cardButton.classList.add("card-button", "btn", "btn-success");
+                cardHeader.classList.add("btn", "btn-warning");
+                cardButton.textContent = "Done";
+                pending.append(card);
+            } else {
+                cardButton.classList.add("card-button", "btn", "btn-danger");
+                cardHeader.classList.add("btn", "btn-success");
+
+                cardButton.textContent = "Undone";
+                done.append(card);
+            }
+            i++;
+
         }
     });
