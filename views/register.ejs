@@ -1,88 +1,94 @@
 <%- include('./partials/header.ejs') %>
 <%- include('./partials/nav.ejs') %>
-  <div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6 card p-4 shadow mt-5 ">
-        <form action="/register" method="POST">
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationServer01">الاسم الأول</label>
-              <input type="text" class="form-control" name="firstname" id="validationServer01" placeholder="الاسم الأول" required>
-            </div>
-            <div class="col-md-6  mb-3">
-              <label for="validationServer02">الاسم الثاني</label>
-              <input type="text" class="form-control" name="lastname" id="validationServer02" placeholder="الاسم الثاني" required>
-            </div>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 card p-4 shadow mt-5 ">
+      <form action="/register" method="POST">
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer01">الاسم الأول</label>
+            <input type="text" class="form-control" name="firstname" id="validationServer01" placeholder="الاسم الأول"
+              required>
           </div>
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-              <label for="inputEmail3">اسم المستخدم</label>
-              <input type="username" class="form-control" name="username" id="inputEmail3" required>
-            </div>
+          <div class="col-md-6  mb-3">
+            <label for="validationServer02">الاسم الثاني</label>
+            <input type="text" class="form-control" name="lastname" id="validationServer02" placeholder="الاسم الثاني"
+              required>
           </div>
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-              <label for="inputPassword6">الرقم السري</label>
-              <input type="password" id="inputPassword6" name="password" class="form-control" aria-describedby="passwordHelpInline"
-                required>
-            </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-12 mb-3">
+            <label for="inputEmail3">اسم المستخدم</label>
+            <input type="username" class="form-control" name="username" id="inputEmail3" required>
           </div>
-          <div class="form-row">
-            <div class="col-md-6">
-              <label for="validationServer04">اللجنة</label>
-              <select class="form-control" name="position" id="validationServer04" required>
-                <option selected hidden value=""></option>
-                <option>متابعة</option>
-                <option>اتصالات</option>
-                <option>اتش ار</option>
-                <option>فرق</option>
-                <option>نقل</option>
-                <option>دعايا</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="validationServer04">درجة التطوع</label>
-              <select class="form-control" name="position" id="validationServer04" required>
-                <option selected hidden value=""></option>
-                <option>مسئول</option>
-                <option>مشروع مسئول</option>
-                <option>نشيط</option>
-              </select>
-            </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-12 mb-3">
+            <label for="inputPassword6">الرقم السري</label>
+            <input type="password" id="inputPassword6" name="password" class="form-control"
+              aria-describedby="passwordHelpInline" required>
           </div>
-          <div class="form-row mb-3">
-            <div class="col-md-6">
-              <label for="branch">الفرع</label>
-              <select class="form-control" name="branch" id="branch" required>
-                <option selected hidden value=""></option>
-                <option>مدينة نصر</option>
-                <option>مصر الجديدة</option>
-                <option>المعادي</option>
-                <option>المقطم</option>
-                <option>اكتوبر</option>
-                <option>المهندسين</option>
-                <option>حلوان</option>
-                <option>فيصل</option>
-                <option>اسكندرية</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="validationServer04">الدور</label>
-              <select class="form-control" name="position" id="validationServer04" required>
-                <option selected hidden value=""></option>
-                <option>مدير</option>
-                <option>نائب مدير</option>
-                <option>متطوع</option>
-              </select>
-            </div>
+        </div>
+        <div class="form-row mb-3">
+          <div class="col-md-6">
+            <label for="branch">الفرع</label>
+            <select class="form-control" name="branch" id="branch" required>
+              <option selected hidden value=""></option>
+              <option>مدينة نصر</option>
+              <option>مصر الجديدة</option>
+              <option>المعادي</option>
+              <option>المقطم</option>
+              <option>اكتوبر</option>
+              <option>المهندسين</option>
+              <option>حلوان</option>
+              <option>فيصل</option>
+              <option>اسكندرية</option>
+            </select>
           </div>
-          <div class="form-row">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">تسجيل</button>
+          <div class="col-md-6">
+            <label for="validationServer04">اللجنة</label>
+            <select class="form-control" name="committee" id="validationServer04">
+              <option selected hidden></option>
+              <option>متابعة</option>
+              <option>اتصالات</option>
+              <option>اتش ار</option>
+              <option>فرق</option>
+              <option>نقل</option>
+              <option>دعايا</option>
+            </select>
           </div>
-        </form>
-      </div>
+
+        </div>
+        <div class="form-row mb-3">
+          <div class="col-md-6">
+            <label for="validationServer04">درجة التطوع</label>
+            <select class="form-control" name="degree" id="validationServer04" required>
+              <option selected hidden value=""></option>
+              <option>مسئول</option>
+              <option>مشروع مسئول</option>
+              <option>نشيط</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="validationServer04">الدور</label>
+            <select class="form-control" name="position" id="validationServer04" required>
+              <option selected hidden value=""></option>
+              <option>مدير تنفيذي</option>
+              <option>هيد فرع</option>
+              <option>لجنة فنية</option>
+              <option>مدير</option>
+              <option>نائب مدير</option>
+              <option>متطوع</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">تسجيل</button>
+        </div>
+      </form>
     </div>
   </div>
+</div>
 
 
-  <%- include('./partials/footer.ejs') %>
+<%- include('./partials/footer.ejs') %>
