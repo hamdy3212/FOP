@@ -5,7 +5,8 @@
   <div class="row">
     <!-- Left Section -->
     <div class="col-md-3 mt-5">
-      <%- include('../partials/left-nav.ejs') %>
+      <%- include('../partials/right-nav.ejs') %>
+
     </div>
     <!-- End of the left section-->
     <!-- Right Section -->
@@ -14,7 +15,7 @@
         <div class="container pending text-center col-md-6 mb-2">
           <button class="btn white-text btn-warning btn-block shadow" type="button" data-toggle="collapse"
             data-target="#pending" aria-expanded="false" aria-controls="pending">
-            <h3>Pending</h3>
+            <h3>جاري</h3>
           </button>
           <div class="collapse show" id="pending">
           </div>
@@ -22,7 +23,7 @@
         <div class="container done text-center col-md-6">
           <button class="btn btn-success btn-block shadow" type="button" data-toggle="collapse" data-target="#done"
             aria-expanded="false" aria-controls="done">
-            <h3>Done</h3>
+            <h3>تم</h3>
           </button>
           <div class="collapse show" id="done">
           </div>

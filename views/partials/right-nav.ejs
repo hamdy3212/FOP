@@ -1,0 +1,33 @@
+<div class="right-section">
+    <div class="card user-details shadow">
+        <h5 class="card-title mx-auto mt-3"><%= currentUser.firstname %> <%= currentUser.lastname %></h5>
+        <img class="card-img-top mx-auto rounded-circle" style="width: 7rem; height: 7rem;"
+            src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/2/2c/New_Timmy_Stock.png/revision/latest/scale-to-width-down/340?cb=20200127001833&path-prefix=en"
+            alt="Card image cap">
+        <hr class="mx-auto" style="width:80%;">
+        <div class="card-body">
+            <p><i class="far fa-address-card ml-2"></i><%= currentUser.position %> </p>
+            <p><i class="fas fa-home ml-2"></i><%= currentUser.branch %></p>
+        </div>
+    </div>
+    <div class="card left-nav shadow">
+        <div class="list-group" id="leftNav">
+            <a href="/tasks/newtask" id="newTaskButton" class="list-group-item list-group-item-action">
+                <i class="far fa-plus-square ml-2 fa-lg"></i>مهمة جديدة</a>
+            <a href="/tasks/takenTasks" id="takenTasksButton" class="list-group-item list-group-item-action">
+                <i class="fas fa-tasks ml-2 fa-lg"></i></i>المهمات المطلوبة</a>
+            <a href="/tasks/givenTasks" id="givenTasksButton" class="list-group-item list-group-item-action">
+                <i class="fas fa-tasks ml-2 fa-lg"></i></i>المهمات المعطاة</a>
+            <!-- <a href="#"
+                class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1"
+                aria-disabled="true">
+                <i class="far fa-calendar-check fa-lg ml-2"></i>الاحداث</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1"
+                aria-disabled="true">
+                <i class="far fa-calendar-check fa-lg ml-2"></i>الخطة</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary disabled" tabindex="-1"
+                aria-disabled="true">
+                <i class="fas fa-chart-bar fa-lg ml-2"></i>احصائيات</a> -->
+        </div>
+    </div>
+</div>

@@ -36,7 +36,7 @@ const res = fetch("takenTasks/data", {
             cardText.textContent = task.description;
             cardHeader.textContent = task.title
             cardTitle.textContent = "Task from " + task.author.username;
-            cardFooter.textContent = task.deadline;
+            cardFooter.textContent = task.deadline.split("T", 1);
             cardButton.setAttribute("href", "/tasks/takenTasks");
             cardButton.addEventListener("click", async () => {
                 await fetch("editstatus", {
@@ -57,7 +57,6 @@ const res = fetch("takenTasks/data", {
             cardBody.append(cardButton);
             cardCollapse.append(cardBody);
             cardCollapse.append(cardFooter);
-
             card.append(cardHeader);
             card.append(cardCollapse);
             if (task.status == "pending") {

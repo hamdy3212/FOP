@@ -33,7 +33,7 @@ const res = fetch("givenTasks/data", {
             cardText.textContent = task.description;
             cardHeader.textContent = task.title
             cardTitle.textContent = "Task to " + task.assignee;
-            cardFooter.textContent = task.deadline;
+            cardFooter.textContent = task.deadline.split("T", 1);
             cardBody.append(cardTitle);
             cardBody.append(cardText);
             cardCollapse.append(cardBody);
