@@ -7,7 +7,7 @@ const
     },
     register_post = (req, res) => {
         const data = req.body;
-        const newUser = new User({ username: data.username, firstname: data.firstname, lastname: data.lastname, branch: data.branch, position: data.position });
+        const newUser = new User({ username: data.username, firstname: data.firstname, lastname: data.lastname, branch: data.branch, committee: data.committee, degree: data.degree,  position: data.position });
         User.register(newUser, req.body.password,
             (err, user) => {
                 if (err) {

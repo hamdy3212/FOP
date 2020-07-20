@@ -1,13 +1,18 @@
 <div class="right-section">
     <div class="card user-details shadow">
         <h5 class="card-title mx-auto mt-3"><%= currentUser.firstname %> <%= currentUser.lastname %></h5>
-        <img class="card-img-top mx-auto rounded-circle" style="width: 7rem; height: 7rem;"
+        <img class="card-img-top mx-auto rounded-circle" id="PP" style="width: 7rem; height: 7rem; cursor: pointer;"
             src="https://vignette.wikia.nocookie.net/fairlyoddparents/images/2/2c/New_Timmy_Stock.png/revision/latest/scale-to-width-down/340?cb=20200127001833&path-prefix=en"
             alt="Card image cap">
+        <form action="#" method="post" style="display: none;">
+                <input id="uploadPP" type="file" name="profile_photo" placeholder="Photo" accept="image/*">
+        </form>
         <hr class="mx-auto" style="width:80%;">
         <div class="card-body">
-            <p><i class="far fa-address-card ml-2"></i><%= currentUser.position %> </p>
-            <p><i class="fas fa-home ml-2"></i><%= currentUser.branch %></p>
+            <p><i class="fas fa-address-card ml-2"></i><%= currentUser.position %> </p>
+            <p><i class="fas fa-building ml-2"></i><%= currentUser.branch %></p>
+            <p><i class="fa fa-users ml-2"></i><%= currentUser.committee %></p>
+            <p><i class="fa fa-graduation-cap ml-2"></i><%= currentUser.degree %></p>
         </div>
     </div>
     <div class="card left-nav shadow">

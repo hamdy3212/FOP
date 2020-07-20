@@ -7,6 +7,8 @@ const User = new Schema({
     username: String,
     password: String,
     branch: String,
+    committee: String,
+    degree: String,
     position: String,
     tasks: [
         {
