@@ -28,13 +28,12 @@ const res = fetch("takenTasks/data", {
             cardHeader.setAttribute("aria-expanded", "false");
             cardHeader.setAttribute("aria-controls", `cardContent${i}`);
             cardHeader.setAttribute("type", "button");
-            card.classList.add("card", "shadow", "pending", "mb-2")
+            card.classList.add("card", "shadow", "pending", "mb-2");
             cardText.classList.add("card-text");
             cardBody.classList.add("card-body");
-
             cardFooter.classList.add("card-footer");
             cardText.textContent = task.description;
-            cardHeader.textContent = task.title
+            cardHeader.textContent = task.title;
             cardTitle.textContent = "Task from " + task.author.username;
             cardFooter.textContent = task.deadline.split("T", 1);
             cardButton.setAttribute("href", "/tasks/takenTasks");
@@ -67,7 +66,6 @@ const res = fetch("takenTasks/data", {
             } else {
                 cardButton.classList.add("card-button", "btn", "btn-danger");
                 cardHeader.classList.add("btn", "btn-success");
-
                 cardButton.textContent = "Undone";
                 done.append(card);
             }

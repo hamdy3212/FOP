@@ -29,7 +29,6 @@ const
         res.render('register');
     },
     register_post = (req, res) => {
-        console.log(req.file);
         const data = req.body;
         const newUser = new User();
         newUser.username = data.username;
@@ -66,12 +65,24 @@ const
     logout = (req, res) => {
         req.logOut();
         res.redirect('/');
-    };
+    },
+    edit = (req, res) => {
+        User.findByIdAndUpdate(req.user.id,
+            { profilePicture: '/uploads/' + req.file.originalname },
+            { new: true },
+            (err, updated) => {
+                if (err) return console.log(err);
+                res.redirect("/");
+            }
+        );
+
+    }
 module.exports = {
     register_get,
     register_post,
     login_get,
     login_post,
     logout,
-    upload
+    upload,
+    edit
 }

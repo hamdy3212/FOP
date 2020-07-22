@@ -17,7 +17,7 @@ const
                 if (err) return console.log(err);
                 const givenTasks = [];
                 for (const task of tasks) {
-                    if(task.author.id.equals(req.user._id)){
+                    if (task.author.id.equals(req.user._id)) {
                         givenTasks.push(task);
                     }
                 }
@@ -25,10 +25,11 @@ const
             });
     },
     task_add_get = (req, res) => {
-        User.find().exec((err, users) => {
-            if (err) return console.log(err);
-            res.render('tasks/newTask', { users });
-        })
+        User.find()
+            .exec((err, users) => {
+                if (err) return console.log(err);
+                res.render('tasks/newTask', { users });
+            })
     },
     task_add_post = (req, res) => {
         const data = req.body;

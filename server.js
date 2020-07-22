@@ -5,7 +5,9 @@ const express = require('express'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
     taskRoutes = require('./routes/tasks'),
-    indexRoutes = require('./routes/index');
+    indexRoutes = require('./routes/index'),
+    methodOverride = require('method-override');
+
 
 
 // connet to DB
@@ -34,6 +36,7 @@ passport.deserializeUser(User.deserializeUser());
 // middleware and static folies
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
+app.use(methodOverride('_method'));
 
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
@@ -51,7 +54,6 @@ const isLoggedIn = (req, res, next) => {
 
 
 app.get("/", isLoggedIn, (req, res) => {
-    console.log(req.user);
     res.render('index');
 })
 
@@ -59,4 +61,5 @@ app.get("/", isLoggedIn, (req, res) => {
 app.use('/tasks', isLoggedIn, taskRoutes)
 
 // user
-app.use(indexRoutes)
+app.use(indexRoutes);
+

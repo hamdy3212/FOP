@@ -1,6 +1,6 @@
-const   express         = require('express'),
-        router          = express.Router(),
-        indexController = require('../controllers/indexController');
+const express = require('express'),
+    router = express.Router(),
+    indexController = require('../controllers/indexController');
 
 // register
 router.get('/register', indexController.register_get);
@@ -12,5 +12,5 @@ router.post('/login', indexController.login_post);
 
 // logout
 router.get('/logout', indexController.logout);
-
+router.put('/edit',indexController.upload.single('profilePicture'), indexController.edit);
 module.exports = router;

@@ -1,11 +1,15 @@
 <div class="right-section">
     <div class="card user-details shadow">
         <h5 class="card-title mx-auto mt-3"><%= currentUser.firstname %> <%= currentUser.lastname %></h5>
-        <img class="card-img-top mx-auto rounded-circle" id="PP" style="width: 7rem; height: 7rem; cursor: pointer;"
+            <img class="card-img-top mx-auto rounded-circle" id="PP" style="width: 7rem; height: 7rem;"
             src="<%= currentUser.profilePicture || 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6aaef60f-6422-4738-88fd-2cde9cf85990/dcazeou-a5e1fa9d-ef6e-4112-ad04-bdf5d982f6e3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNmFhZWY2MGYtNjQyMi00NzM4LTg4ZmQtMmNkZTljZjg1OTkwXC9kY2F6ZW91LWE1ZTFmYTlkLWVmNmUtNDExMi1hZDA0LWJkZjVkOTgyZjZlMy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.S4W12cw1wJyzA6SoaXH-ICh09Xd_Xiwphx3yOoT2g1w' %>"
             alt="Card image cap">
-        <form action="#" method="post" style="display: none;">
-                <input id="uploadPP" type="file" name="profile_photo" placeholder="Photo" accept="image/*">
+        <button class="btn btn-warning" id="edit">Edit</button>
+
+        <form action="/edit?_method=PUT" enctype="multipart/form-data" method="POST" id="uploadForm" style="display: none;" class="mr-3">
+                <input type="file" class="my-3" name="profilePicture" placeholder="Photo" accept="image/*" required>
+                <button type="submit" class="btn btn-success">Done</button>
+                <button type="reset" id="cancel" class="btn btn-danger">Cancel</button>
         </form>
         <hr class="mx-auto" style="width:80%;">
         <div class="card-body">
