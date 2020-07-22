@@ -4,7 +4,7 @@ const   express         = require('express'),
 
 // register
 router.get('/register', indexController.register_get);
-router.post('/register', indexController.register_post);
+router.post('/register', indexController.upload.single('profilePicture'), indexController.register_post);
 
 // login
 router.get('/login', indexController.login_get);

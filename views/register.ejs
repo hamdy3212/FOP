@@ -3,7 +3,7 @@
 <div class="container my-5">
   <div class="row justify-content-center">
     <div class="col-md-6 card p-4 shadow mt-5 ">
-      <form action="/register" method="POST">
+      <form action="/register" enctype="multipart/form-data" method="POST">
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationServer01">الاسم الأول</label>
@@ -81,6 +81,10 @@
               <option>متطوع</option>
             </select>
           </div>
+        </div>
+        <div class="form-row mb-3">
+          <label for="uploadPP" class="ml-2">صورة شخصية</label>
+          <input id="uploadPP" type="file" name="profilePicture" placeholder="Photo" accept="image/*">
         </div>
         <div class="form-row">
           <button class="btn btn-lg btn-primary btn-block" type="submit">تسجيل</button>

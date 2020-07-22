@@ -10,12 +10,13 @@ const User = new Schema({
     committee: String,
     degree: String,
     position: String,
+    profilePicture: String,
     tasks: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Task"
         }
-    ]
+    ],
 
 })
 User.plugin(passportLocalMongoose);

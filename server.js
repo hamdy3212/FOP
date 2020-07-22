@@ -33,6 +33,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 // middleware and static folies
 app.use(express.static('public'));
+app.use('/uploads', express.static('uploads'));
+
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     next();
@@ -49,6 +51,7 @@ const isLoggedIn = (req, res, next) => {
 
 
 app.get("/", isLoggedIn, (req, res) => {
+    console.log(req.user);
     res.render('index');
 })
 

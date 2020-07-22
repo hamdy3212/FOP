@@ -1,13 +1,50 @@
 //register_get, register_post, login_get, login_post, logout
 const
-    passport      = require('passport'),
-    User          = require('../models/user'),
-    register_get  = (req, res) => {
+    passport = require('passport'),
+    User = require('../models/user'),
+    multer = require('multer'),
+    fileFilter = (req, file, cb) => {
+        if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+            cb(null, true);
+        } else {
+            cb(null, false);
+        }
+    },
+    storage = multer.diskStorage({
+        destination: function (req, file, cb) {
+            cb(null, './uploads/');
+        },
+        filename: function (req, file, cb) {
+            cb(null, file.originalname);
+        }
+    }),
+    upload = multer({
+        storage: storage,
+        limit: {
+            fileSize: 1024 * 1024 * 5
+        },
+        fileFilter: fileFilter
+    }),
+    register_get = (req, res) => {
         res.render('register');
     },
     register_post = (req, res) => {
+        console.log(req.file);
         const data = req.body;
-        const newUser = new User({ username: data.username, firstname: data.firstname, lastname: data.lastname, branch: data.branch, committee: data.committee, degree: data.degree,  position: data.position });
+        const newUser = new User();
+        newUser.username = data.username;
+        newUser.firstname = data.firstname;
+        newUser.lastname = data.lastname;
+        newUser.branch = data.branch;
+        newUser.committee = data.committee;
+        newUser.degree = data.degree;
+        newUser.position = data.position;
+        if (typeof req.file === "undefined") {
+            newUser.profilePicture = '/uploads/timmy.png'
+        } else {
+            newUser.profilePicture = req.file.path;
+        }
+
         User.register(newUser, req.body.password,
             (err, user) => {
                 if (err) {
@@ -19,14 +56,14 @@ const
                 });
             });
     },
-    login_get     = (req, res) => {
+    login_get = (req, res) => {
         res.render('login');
     },
-    login_post    = passport.authenticate('local', {
+    login_post = passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/login'
     }),
-    logout        = (req, res) => {
+    logout = (req, res) => {
         req.logOut();
         res.redirect('/');
     };
@@ -35,5 +72,6 @@ module.exports = {
     register_post,
     login_get,
     login_post,
-    logout
+    logout,
+    upload
 }
